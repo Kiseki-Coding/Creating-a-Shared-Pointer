@@ -1,0 +1,30 @@
+/*
+
+Activity 33: Create a program that uses a shared pointer to manage the memory of a dynamically allocated object. Use the dereference operator to print the value of the object. 
+Use the use_count function to print the number of shared pointers pointing to the object.
+
+We use shared pointer because unique pointers cannot be shared.
+meaning you can assign one raw pointer to multiple owners
+use_count keyword basically just counts all the owners (references to that pointer) of that shared pointer
+
+Year: 2023
+*/
+#include <iostream>
+//include memory library
+#include <memory>
+using namespace std;
+int main()
+{
+	//creating a shared pointer using the keyword shared_ptr
+	//23 is an object of class int or type int
+	shared_ptr<int>ShPtr1 = make_shared<int>(23);
+	//creating other shared pointers assigning the value of the first shared pointer to them
+	shared_ptr<int>ShPtr2 = ShPtr1;
+	shared_ptr<int>ShPtr3 = ShPtr2;
+	//pringing out the value of the objecrt
+	cout << *ShPtr3 <<"\n";
+	//printing out number of shared owners of that pointer
+	cout << ShPtr3.use_count();
+
+	return 0;
+}
