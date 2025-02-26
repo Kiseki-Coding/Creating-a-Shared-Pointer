@@ -1,5 +1,5 @@
 /*
-
+Creating a SharedPointer in C++
 Activity 33: Create a program that uses a shared pointer to manage the memory of a dynamically allocated object. Use the dereference operator to print the value of the object. 
 Use the use_count function to print the number of shared pointers pointing to the object.
 
